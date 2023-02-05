@@ -23,7 +23,7 @@ class TrackDelivery extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Track Order Delivery"),
+        title: const Text("Track Orders"),
         centerTitle: true,
         backgroundColor: Colors.black,
         leading: IconButton(
@@ -118,46 +118,35 @@ class TrackDelivery extends StatelessWidget {
 
             // * TimeLine
             const AppTimeline(
-              title: 'Order Approved',
+              title: 'Order confirmed',
               subTitle:
-                  'Your order has been approved it will delivered for you ',
+                  'The Car has been Orderd',
               date: 'Aug 12',
               color: Colors.black,
               
               
             ),
             const AppTimeline(
-              title: 'Order Out',
-              subTitle: 'Order it out for delivery',
+              title: 'Order Arrived',
+              subTitle: 'The car is with a client',
               date: 'Aug 15',
               color: Colors.black,
               
             ),
-            const AppTimeline(
-              title: 'Order Arrive',
-              subTitle: 'Order arrival to Your Location',
+             const AppTimeline(
+              title: 'Money transfered',
+              subTitle: 'We transferd the money to your bank account',
               date: 'Aug 20',
               color: Colors.black,
-            ),
              
+            ),
             const AppTimeline(
-              title: 'Return Car',
-              subTitle: 'Client has returned the car',
-              date: 'Aug 22',
+              title: 'Order completed',
+              subTitle: 'The client has returned the car',
+              date: 'Aug 23',
               
             ),
-            const AppTimeline(
-              title: 'The money transfersd',
-              subTitle: 'We transferd the money to your bank account',
-              date: 'Aug 23',
-             
-            ),
-            const AppTimeline(
-              title: 'Completed',
-              subTitle: 'Order is Completed ',
-              date: 'Aug 23',
-            
-            ),
+           
           ],
         ),
       ),

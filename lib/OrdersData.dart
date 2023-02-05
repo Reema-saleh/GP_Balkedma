@@ -5,20 +5,21 @@ import 'TrackDelivery_SP.dart';
 
 class Car extends StatelessWidget {
   const Car({
-     Key? key,
-   required this.price,
+    Key? key,
+    required this.price,
     required this.OrderNumber,
     required this.carName,
     required this.carImage,
-    required this.delLocation, 
+    required this.delLocation,
+    required this.ordered,
   }) : super(key: key);
-
 
   final double price;
   final String OrderNumber;
   final String carName;
   final String carImage;
-  final String delLocation; // delivery location
+  final String delLocation;
+  final bool ordered; // delivery location
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +39,6 @@ class Car extends StatelessWidget {
             children: [
               Column(
                 children: [
-                 
                   const SizedBox(
                     height: 5,
                   ),
@@ -52,7 +52,6 @@ class Car extends StatelessWidget {
                     ),
                   ),
                   Column(
-                    
                     children: [
                       Container(
                         alignment: Alignment.center,
@@ -65,42 +64,51 @@ class Car extends StatelessWidget {
                         ),
                       ),
                       Container(
-                    alignment: Alignment.center,
-                    height: 20,
-                    //width: 150,
-                    child: Text("Order: $OrderNumber", style: const TextStyle(color: Colors.grey, fontSize: 15)),
-                  ),
-                   
-                  Container(
-                    alignment: Alignment.center,
-                    height: 20,
-                    width: 150,
-                    child: Text(
-                    "To $delLocation",
-                    style: const TextStyle(color: Colors.grey, fontSize: 15),
-                    ),
-                  ),
-                   ],
+                        alignment: Alignment.center,
+                        height: 20,
+                        //width: 150,
+                        child: Text("Order: $OrderNumber",
+                            style: const TextStyle(
+                                color: Colors.grey, fontSize: 15)),
+                      ),
+                      Container(
+                        alignment: Alignment.center,
+                        height: 20,
+                        width: 150,
+                        child: Text(
+                          "To $delLocation",
+                          style:
+                              const TextStyle(color: Colors.grey, fontSize: 15),
+                        ),
+                      ),
+                    ],
                   ),
                   SizedBox(
-      
                     child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black,
                           shape: RoundedRectangleBorder(
-                           borderRadius: BorderRadius.circular(50),
+                            borderRadius: BorderRadius.circular(50),
                           ),
                         ),
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: ((context) =>TrackDelivery(price: price, OrderNumber: OrderNumber, carName: carName, carImage: carImage, delLocation: delLocation))));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: ((context) => TrackDelivery(
+                                      price: price,
+                                      OrderNumber: OrderNumber,
+                                      carName: carName,
+                                      carImage: carImage,
+                                      delLocation: delLocation))));
                         },
                         child: const Text("Select Order")),
                   ),
                 ],
               ),
-              
-              const SizedBox(width: 100, ),
-              
+              const SizedBox(
+                width: 100,
+              ),
               Column(
                 children: [
                   Image(
@@ -109,14 +117,17 @@ class Car extends StatelessWidget {
                     width: 120,
                     fit: BoxFit.fill,
                   ),
-                 
                 ],
               ),
             ],
           ),
-          const Divider(thickness: 2,color: Colors.grey,)
+          const Divider(
+            thickness: 2,
+            color: Colors.grey,
+          )
         ],
       ),
     );
   }
 }
+

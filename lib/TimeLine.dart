@@ -22,7 +22,7 @@ class AppTimeline extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // * circle and line
+          
           Column(
             children: [
               // * Circle
